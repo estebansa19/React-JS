@@ -1,12 +1,20 @@
 import React from "react";
 
 class BadgeForm extends React.Component {
-  handleChange = e => {
-    console.log({
-      name: e.target.name,
-      value: e.target.value
-    });
+  state = {
+    twitter: "@estebandido"
   };
+
+  // props.onChange = e => {
+  //   // console.log({
+  //   //   name: e.target.name,
+  //   //   value: e.target.value
+  //   // });
+
+  //   this.setState({
+  //     [e.target.name]: e.target.value
+  //   });
+  // };
 
   handleClick = e => {
     console.log("Button was clicked");
@@ -14,6 +22,8 @@ class BadgeForm extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    console.log(this.props.formValues);
+    console.log("Form was submited");
   };
 
   render() {
@@ -25,10 +35,55 @@ class BadgeForm extends React.Component {
           <div className="form-group">
             <label>First Name</label>
             <input
-              onChange={this.handleChange}
+              onChange={this.props.onChange}
               type="text"
               className="form-control"
               name="firstName"
+              value={this.props.formValues.firstName}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Last Name</label>
+            <input
+              onChange={this.props.onChange}
+              type="text"
+              className="form-control"
+              name="lastName"
+              value={this.props.formValues.lastName}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              onChange={this.props.onChange}
+              type="email"
+              className="form-control"
+              name="email"
+              value={this.props.formValues.email}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Job</label>
+            <input
+              onChange={this.props.onChange}
+              type="text"
+              className="form-control"
+              name="job"
+              value={this.props.formValues.job}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Twitter</label>
+            <input
+              onChange={this.props.onChange}
+              type="text"
+              className="form-control"
+              name="twitter"
+              value={this.props.formValues.twitter}
             />
           </div>
 
