@@ -1,0 +1,15 @@
+.Background {
+  height: 100vh;
+  width: 100%;
+  background-position: center top;
+  background-color: #1c1926;
+  background-image: url(../../images/stars.svg);
+}
+
+.Home__image {
+  width: 400px;
+}
+
+.container-margin {
+  padding-top: 8%;
+}
